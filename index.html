@@ -5191,125 +5191,578 @@ dialog.card::backdrop {background:rgba(6,23,13,.58);backdrop-filter:blur(9px) sa
 }
 
 </style>
-<style id="jb-detail-editorial-v2">
-/* ── The explanation is a designed page, not a block of fields. ── */
-#view-cat:not([data-console-library]) #panel{--jb-edge:#b6d197;--jb-ink:#eff8e9;--jb-muted:#bbcfb2;scrollbar-width:thin;scrollbar-color:#7e9b6b50 transparent;scroll-padding-top:24px;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(115px,29%);grid-template-areas:'heading art' 'body body';align-items:center;column-gap:clamp(13px,2.5vw,27px);row-gap:12px;margin:0 0 24px;padding:clamp(17px,2.1vw,25px);min-width:0;border:1px solid #bad89529;border-radius:19px;background:radial-gradient(ellipse 80% 85% at 95% 5%,#c8e8a410,transparent 100%),linear-gradient(145deg,#2b4833,#1a3023);box-shadow:inset 0 1px 0 #f5ffe017,0 3px 12px #06170c1d;overflow:hidden;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero::before{content:"";position:absolute;left:22px;right:22px;top:0;height:2px;background:linear-gradient(90deg,#bade8d,transparent 65%);opacity:.65;pointer-events:none;}
-#view-cat:not([data-console-library]) #panel .jb-detail-heading{grid-area:heading;min-width:0;align-self:end;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero .tube-eyebrow{position:static!important;inset:auto;z-index:auto;min-height:0;margin:0 0 15px;padding:0;background:none!important;box-shadow:none!important;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero #service-symbol{width:39px;height:39px;border-radius:11px;background:#d1e8b013;border:1px solid #cde2ac35;box-shadow:inset 0 1px 0 #ffffff0d;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero #service-family{font:600 .64rem/1.3 var(--face-data);letter-spacing:.07em;color:#cadcbe;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero #t-title{max-width:27ch;min-height:0;margin:0!important;font:750 clamp(1.65rem,2.45vw,2.5rem)/1.1 var(--face-panel)!important;letter-spacing:-.05em!important;color:#f6fbec;text-wrap:balance;overflow-wrap:break-word;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero #t-body{grid-area:body;align-self:start;max-width:63ch;margin:0!important;font:400 clamp(.82rem,1.01vw,.98rem)/1.67 var(--face-panel)!important;color:#d2dfcc;letter-spacing:0;text-wrap:pretty;overflow-wrap:break-word;}
-#view-cat:not([data-console-library]) #panel .jb-detail-visual{grid-area:art;position:relative;isolation:isolate;display:grid;place-items:center;align-self:start;min-height:140px;height:140px;overflow:hidden;border:1px solid #bed7a522;border-radius:15px;background:radial-gradient(ellipse at 50% 55%,#7ea66e28,transparent 68%),linear-gradient(150deg,#2a4a35,#15291e);}
+<style id="jb-detail-editorial-v3">
+/* Signature service stories: a single coherent system, scoped exclusively to expanded offerings. */
+#view-cat:not([data-console-library]) #panel{
+ --detail-mist:#f4fae8;--detail-soft:#cedfc1;--detail-glow:#c9e9a0;
+ --detail-line:rgba(179,215,150,.22);--detail-white:#f8fdf3;
+ scrollbar-width:thin;scrollbar-color:#86a37770 transparent;
+ scroll-padding-top:16px;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-heading .ux-service-breadcrumb{display:none!important;}
+#view-cat:not([data-console-library]) #panel .tube-rule,
+#view-cat:not([data-console-library]) #panel .tube-status{display:none!important;}
+/* First impression: editorial story + distinctive visual, rather than a boxed form. */
+#view-cat:not([data-console-library]) #panel .jb-detail-hero{
+ position:relative;isolation:isolate;display:grid;
+ grid-template-columns:minmax(0,1fr) clamp(140px,30%,229px);
+ grid-template-areas:'copy art';align-items:stretch;gap:clamp(14px,2.3vw,26px);
+ min-width:0;margin:0 0 clamp(12px,2vh,17px);
+ padding:clamp(17px,1.7vw,21px);overflow:hidden;
+ border:1px solid rgba(187,224,151,.27);border-radius:21px;
+ background:radial-gradient(ellipse 63% 118% at 98% 8%,rgba(159,205,129,.145),transparent 80%),
+   linear-gradient(138deg,#2d503a 0%,#233f30 49%,#193426 100%);
+ box-shadow:inset 0 1px 0 rgba(252,255,238,.13),0 1px 0 #0c271722,0 12px 30px #081a0f25;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero::before{
+ content:"";position:absolute;top:0;left:28px;width:136px;height:2px;
+ background:linear-gradient(90deg,#d3f2a1,rgba(211,242,161,0));pointer-events:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero::after{
+ content:"";position:absolute;right:-105px;bottom:-145px;width:320px;height:320px;border:1px solid #c0e9a410;
+ border-radius:50%;box-shadow:0 0 0 50px #c0e9a407,0 0 0 100px #c0e9a404;pointer-events:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-heading{
+ grid-area:copy;position:relative;z-index:2;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero .tube-eyebrow{
+ position:static!important;inset:auto!important;z-index:auto;display:flex;align-items:center;min-height:0;
+ padding:0!important;margin:0 0 clamp(10px,1.3vh,12px)!important;background:none!important;box-shadow:none!important;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #service-symbol{
+ display:grid;place-items:center;flex:0 0 31px;width:31px;height:31px;
+ background:linear-gradient(145deg,#8fba7430,#deefc406);border:1px solid #b7dfa448;border-radius:9px;
+ box-shadow:inset 0 1px 0 #fff2;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #service-symbol>svg{
+ width:17px;height:17px;color:#d9ebc3;stroke:#d9ebc3;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero .service-identity-copy{display:flex;min-width:0;align-items:flex-start;}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero .service-identity{gap:10px;}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #service-family{
+ font:600 .65rem/1.25 var(--face-data);text-transform:uppercase;letter-spacing:.09em;
+ color:#cfe6b7;text-decoration:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #t-title{
+ width:100%;max-width:25ch;min-height:0;margin:0 0 clamp(8px,1.3vh,11px)!important;
+ font:750 clamp(1.65rem,2.65vw,2.72rem)/1.08 var(--face-panel)!important;
+ letter-spacing:-.052em!important;color:#fbfff4;text-wrap:balance;overflow-wrap:break-word;text-transform:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #t-title::after{display:none!important;}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #t-body{
+ max-width:62ch;min-height:0;margin:0!important;
+ font:400 clamp(.85rem,1.03vw,.99rem)/1.57 var(--face-panel)!important;
+ color:#d4e2ce;letter-spacing:0;text-wrap:pretty;overflow-wrap:break-word;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-visual{
+ grid-area:art;position:relative;isolation:isolate;display:grid;place-items:center;
+ min-width:0;min-height:150px;height:100%;max-height:186px;align-self:center;
+ overflow:hidden;border:1px solid #cae6a62d;border-radius:17px;
+ background:radial-gradient(circle at 50% 46%,#96c28f20,transparent 66%),
+   linear-gradient(155deg,#315841,#173425);
+ box-shadow:inset 0 1px 0 #e4f7c615,inset 0 -22px 30px #071b0d28,0 6px 14px #081d1021;
+}
 #view-cat:not([data-console-library]) #panel .jb-detail-visual[hidden]{display:none!important;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero[data-folder] {grid-template-columns:minmax(0,1fr);grid-template-areas:'heading' 'body';}
-#view-cat:not([data-console-library]) #panel .jb-visual-grid{position:absolute;inset:0;opacity:.32;background-image:linear-gradient(#d2e9b00b 1px,transparent 1px),linear-gradient(90deg,#d2e9b00b 1px,transparent 1px);background-size:20px 20px;mask-image:linear-gradient(130deg,transparent,#000);}
-#view-cat:not([data-console-library]) #panel .jb-visual-rings{position:absolute;width:min(89%,155px);aspect-ratio:1;border:1px solid #c6e3a52d;border-radius:50%;box-shadow:0 0 0 21px #bed79d08,0 0 0 44px #bed79d04;opacity:.8;}
-#view-cat:not([data-console-library]) #panel .jb-detail-art{position:relative;z-index:1;display:grid;place-items:center;width:100%;height:100%;padding:10px;filter:drop-shadow(0 9px 9px #07190f66);}
-#view-cat:not([data-console-library]) #panel .jb-detail-art .hardware-art{display:block;width:100%;height:100%;max-height:210px;transform:scale(1.11);transition:transform 520ms cubic-bezier(.18,.8,.3,1);}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero[data-kind="service"] .jb-detail-visual{min-height:111px;height:111px;}
-#view-cat:not([data-console-library]) #panel .jb-detail-hero[data-kind="service"] .jb-detail-art>svg:not(.hardware-art){width:min(55%,95px);height:min(55%,95px);stroke:#c9e4a3;stroke-width:1.1;opacity:.9;filter:drop-shadow(0 7px 14px #07180c77);}
-
-
-#view-cat:not([data-console-library]) #panel .jb-detail-section-bar{display:flex;align-items:center;gap:13px;margin:3px 0 14px;}
+#view-cat:not([data-console-library]) #panel .jb-visual-grid{
+ position:absolute;inset:0;opacity:.5;
+ background-image:linear-gradient(#d2e9b00e 1px,transparent 1px),linear-gradient(90deg,#d2e9b00e 1px,transparent 1px);
+ background-size:18px 18px;mask-image:radial-gradient(ellipse at center,#000,transparent 84%);
+}
+#view-cat:not([data-console-library]) #panel .jb-visual-rings{
+ position:absolute;width:64%;aspect-ratio:1;border:1px solid #c1e6a63b;border-radius:50%;
+ box-shadow:0 0 0 18px #b2dcac0b,0 0 0 40px #b2dcac07,0 0 32px #b2dcac0e;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-art{
+ position:relative;z-index:1;display:grid;place-items:center;width:100%;height:100%;padding:11px;
+ filter:drop-shadow(0 12px 11px #05170b55);
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-art>svg:not(.hardware-art){
+ display:block;width:clamp(56px,52%,110px);height:clamp(56px,52%,110px);stroke:#d8efb4;
+ stroke-width:1.15;opacity:.95;filter:drop-shadow(0 0 18px #c1e5a12f);
+ transition:transform .38s cubic-bezier(.16,1,.3,1);
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-art .hardware-art{
+ display:block;width:100%;height:100%;max-height:198px;transform:scale(1.12);
+ transition:transform .48s cubic-bezier(.16,1,.3,1);
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero[data-folder]{grid-template-columns:1fr;}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"] .jb-detail-visual{min-height:157px;}
+/* A meaningful next section, grouped to make scanning faster and reduce scroll. */
+#view-cat:not([data-console-library]) #panel .jb-detail-below{
+ display:grid;grid-template-columns:minmax(0,1.12fr) minmax(220px,.88fr);gap:clamp(12px,2vw,20px);
+ align-items:start;min-width:0;margin:0 0 12px;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-below[hidden]{display:none!important;}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes,
+#view-cat:not([data-console-library]) #panel .jb-detail-facts{
+ min-width:0;height:100%;border:1px solid #bcd7a42e;border-radius:17px;
+ background:linear-gradient(150deg,#bbd49b0d,#9dba9406);box-shadow:inset 0 1px 0 #fff08;
+ padding:clamp(12px,1.1vw,14px);
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes[hidden],
+#view-cat:not([data-console-library]) #panel .jb-detail-facts[hidden]{display:none!important;}
+#view-cat:not([data-console-library]) #panel .jb-detail-below:has(.jb-detail-includes[hidden]){grid-template-columns:minmax(0,1fr);}
+#view-cat:not([data-console-library]) #panel .jb-detail-below:has(.jb-detail-facts[hidden]){grid-template-columns:minmax(0,1fr);}
+#view-cat:not([data-console-library]) #panel .jb-detail-section-bar,
+#view-cat:not([data-console-library]) #panel .jb-detail-facts-title{
+ display:flex;align-items:center;gap:10px;min-height:20px;margin:0 0 10px;
+}
 #view-cat:not([data-console-library]) #panel .jb-detail-section-bar[hidden]{display:none!important;}
-#view-cat:not([data-console-library]) #panel .jb-detail-section-bar h3{flex:0 0 auto;margin:0;font:650 .84rem/1.25 var(--face-panel);letter-spacing:-.01em;color:#d8e9c5;}
-#view-cat:not([data-console-library]) #panel .jb-section-rule{flex:1;height:1px;background:linear-gradient(90deg,#bad49b33,transparent);}
-#view-cat:not([data-console-library]) #panel #t-meta{gap:11px;margin-bottom:23px;}
-#view-cat:not([data-console-library]) #panel #t-meta .mcell{position:relative;min-height:80px;gap:7px;padding:15px 16px 15px 42px;border-radius:13px;background:linear-gradient(135deg,#b4d39111,#a9c79006);border:1px solid #b4d3912e;box-shadow:inset 0 1px 0 #fff05;}
-#view-cat:not([data-console-library]) #panel #t-meta .mcell::before{content:"";position:absolute;top:17px;left:14px;width:17px;height:17px;opacity:.88;background:center / contain no-repeat;}
-#view-cat:not([data-console-library]) #panel #t-meta .mcell:first-child::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c3dda5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z'/%3E%3Ccircle cx='12' cy='10' r='2.5'/%3E%3C/svg%3E");}
-#view-cat:not([data-console-library]) #panel #t-meta .mcell:nth-child(2)::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c3dda5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3.5 2'/%3E%3C/svg%3E");}
-#view-cat:not([data-console-library]) #panel #t-meta .mcell-l{font:650 .55rem/1.2 var(--face-data);letter-spacing:.11em;text-transform:uppercase;color:#a6c390;}
-#view-cat:not([data-console-library]) #panel #t-meta .mcell-v{font:500 .85rem/1.45 var(--face-panel);color:#e5f2d6;}
-#view-cat:not([data-console-library]) #panel #t-specs:not(.platform-grid){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:20px;}
-#view-cat:not([data-console-library]) #panel #t-specs .spec{min-height:49px;gap:10px;align-items:center;border-radius:12px;border-color:#b3d08d30;background:linear-gradient(135deg,#d5efa00c,#bed98a07);font-size:.79rem;line-height:1.46;}
-#view-cat:not([data-console-library]) #panel #t-specs .spec::before{flex:0 0 23px;width:23px;height:23px;border-radius:7px;}
-/* A console is a hardware story: model choice is a distinct, calm surface. */
-#view-cat:not([data-console-library]) #panel #platform-coverage{margin:0 0 23px;padding:0;border:1px solid #bad49635;border-radius:15px;background:#d5eeb30a;overflow:hidden;}
-#view-cat:not([data-console-library]) #panel #platform-coverage summary{position:relative;min-height:55px;padding:12px 16px;gap:10px;color:#e5f3d6;font:650 .84rem/1.4 var(--face-panel);background:#b7d98d0b;}
-#view-cat:not([data-console-library]) #panel #platform-coverage summary>b{margin-left:auto;border:1px solid #aac88e3b;border-radius:8px;background:#b3ce8d18;color:#daefbd;font:650 .68rem/1.3 var(--face-data);padding:5px 8px;}
-#view-cat:not([data-console-library]) #panel #platform-coverage summary>svg{flex:0 0 18px;width:18px;height:18px;color:#d0e3b4;}
-#view-cat:not([data-console-library]) #panel .platform-model-hint{margin:0 16px 13px;font-size:.78rem;line-height:1.55;color:#b6cfa6;}
-#view-cat:not([data-console-library]) #panel .platform-models{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;align-content:start;gap:8px;max-height:220px;padding:0 16px 12px;overflow:auto;}
-#view-cat:not([data-console-library]) #panel .platform-model{display:flex;align-items:center;justify-content:flex-start;min-width:0;min-height:44px;padding:10px 12px;border-radius:10px;border:1px solid #b7d49341;background:#a9cb7d0c;color:#dbeacc;text-align:left;font:500 .76rem/1.4 var(--face-panel);overflow-wrap:anywhere;transition:background .18s ease,border-color .18s ease,transform .18s ease;}
-#view-cat:not([data-console-library]) #panel .platform-model[aria-pressed="true"]{background:#d0e8ad;color:#29432c;border-color:#d8f1b6;box-shadow:inset 0 1px 0 #fff7,0 0 0 2px #d2eda425;font-weight:700;}
-#view-cat:not([data-console-library]) #panel .platform-model[aria-pressed="true"]::before{content:'✓';margin-right:8px;font-weight:800;}
-#view-cat:not([data-console-library]) #panel .platform-model-note{margin:0 16px 15px;font-size:.74rem;line-height:1.5;color:#b0c99f;}
-#view-cat:not([data-console-library]) #panel .model-search{margin:0 16px 12px;}
-#view-cat:not([data-console-library]) #panel .model-results{margin:0 16px 12px;}
-#view-cat:not([data-console-library]) #panel .platform-selection{font-weight:600;color:#d5ebac;max-width:19ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-#view-cat:not([data-console-library]) #panel #platform-compat{border-radius:12px;margin:0 0 22px;}
+#view-cat:not([data-console-library]) #panel .jb-detail-section-bar h3,
+#view-cat:not([data-console-library]) #panel .jb-detail-facts-title h3{
+ flex:0 0 auto;margin:0;font:650 .77rem/1.3 var(--face-panel);
+ letter-spacing:.015em;color:#e4f3d6;text-transform:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-section-rule{
+ flex:1;height:1px;background:linear-gradient(90deg,#b8db9e50,transparent);
+}
+/* Rows are deliberately full-width: long service names never collide. */
+#view-cat:not([data-console-library]) #panel #t-specs:not(.platform-grid){
+ display:grid;grid-template-columns:1fr;gap:7px;margin:0;padding:0;border:0;overflow:visible;
+}
+#view-cat:not([data-console-library]) #panel #t-specs .spec{
+ display:flex;align-items:center;min-height:40px;gap:11px;margin:0;padding:8px 11px;
+ border:1px solid #b6d39b29;border-radius:11px;background:#e1f6c50b;
+ color:#e2f0da;font:500 clamp(.75rem,.98vw,.83rem)/1.35 var(--face-panel);
+ transition:border-color .2s ease,background-color .2s ease,transform .2s ease;
+}
+#view-cat:not([data-console-library]) #panel #t-specs .spec::before{
+ flex:0 0 23px;width:23px;height:23px;border:1px solid #b4d69b4e;border-radius:8px;
+ background-color:#c4ec9b15;
+}
+#view-cat:not([data-console-library]) #panel #t-meta{
+ display:grid;grid-template-columns:1fr;gap:8px;margin:0;padding:0;border:0;
+}
+#view-cat:not([data-console-library]) #panel #t-meta[hidden]{display:none!important;}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell{
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ position:relative;min-height:61px;gap:6px;padding:10px 11px 10px 42px;
+ border:1px solid #b6d39b29;border-radius:11px;background:#e1f6c50b;
+ box-shadow:none;overflow:hidden;
+}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell::before{
+ content:"";position:absolute;left:13px;top:14px;width:17px;height:17px;
+ opacity:.9;background-position:center;background-repeat:no-repeat;background-size:contain;
+}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell:first-child::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cae4aa' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z'/%3E%3Ccircle cx='12' cy='10' r='2.5'/%3E%3C/svg%3E");}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell:nth-child(2)::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cae4aa' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3.5 2'/%3E%3C/svg%3E");}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell-l{
+ font:650 .56rem/1.2 var(--face-data);letter-spacing:.11em;text-transform:uppercase;color:#abc99a;
+}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell-v{
+ font:550 clamp(.76rem,.97vw,.84rem)/1.3 var(--face-panel);color:#f2f8e9;
+}
+/* Compatibility remains an existing accessible details/summary control. */
+#view-cat:not([data-console-library]) #panel #platform-coverage{
+ margin:0 0 16px;border:1px solid #b9d4a343;border-radius:15px;
+ background:#cbe3b00b;overflow:hidden;
+}
+#view-cat:not([data-console-library]) #panel #platform-coverage summary{
+ min-height:51px;padding:11px 14px;gap:10px;color:#e6f5d7;
+ font:650 .83rem/1.35 var(--face-panel);background:#c4dea00a;
+}
+#view-cat:not([data-console-library]) #panel #platform-coverage summary>b{
+ margin-left:auto;flex:0 0 auto;padding:5px 8px;border:1px solid #bbd49f50;
+ border-radius:8px;background:#bedc9517;color:#e7f7cc;font:650 .68rem/1.2 var(--face-data);
+}
+#view-cat:not([data-console-library]) #panel #platform-coverage summary>svg{width:18px;height:18px;color:#d4e8bb;}
+#view-cat:not([data-console-library]) #panel .platform-model-hint{margin:11px 14px;font-size:.78rem;line-height:1.5;color:#bad2aa;}
+#view-cat:not([data-console-library]) #panel .platform-models{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:204px;overflow:auto;padding:0 14px 13px;}
+#view-cat:not([data-console-library]) #panel .platform-model{
+ display:flex;align-items:center;min-width:0;min-height:42px;padding:9px 11px;
+ color:#e5efdb;background:#badfa40a;border:1px solid #b6d09937;border-radius:10px;
+ font:500 .75rem/1.34 var(--face-panel);text-align:left;overflow-wrap:anywhere;
+ transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+#view-cat:not([data-console-library]) #panel .platform-model[aria-pressed="true"]{
+ background:#b9df8a29;border-color:#c5ea9e;color:#f6ffe5;
+}
+#view-cat:not([data-console-library]) #panel .platform-model-note{margin:0 14px 12px;color:#bed3ac;font-size:.72rem;line-height:1.5;}
+#view-cat:not([data-console-library]) #panel .model-search{margin:0 14px 11px;}
+#view-cat:not([data-console-library]) #panel .model-results{margin:0 14px 9px;}
+#view-cat:not([data-console-library]) #panel .platform-selection{color:#d9f0bb;font-weight:650;max-width:17ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#view-cat:not([data-console-library]) #panel #platform-compat{margin:0 0 15px;border-radius:12px;}
+#view-cat:not([data-console-library]) #panel[data-group] .jb-detail-below{grid-template-columns:1fr;}
+#view-cat:not([data-console-library]) #panel .tube-specs.platform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
 @media(hover:hover) and (pointer:fine){
- #view-cat:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"]:hover .jb-detail-art .hardware-art{transform:translateY(-4px) rotate(-1deg) scale(1.16);}
- #view-cat:not([data-console-library]) #panel .platform-model:hover:not([aria-pressed="true"]){border-color:#c0dfa267;background:#b5d48a20;transform:translateY(-1px);}
+ #view-cat:not([data-console-library]) #panel .jb-detail-hero:hover .jb-detail-art>svg:not(.hardware-art){transform:translateY(-3px) rotate(-3deg) scale(1.06);}
+ #view-cat:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"]:hover .hardware-art{transform:translateY(-3px) rotate(-1deg) scale(1.16);}
+ #view-cat:not([data-console-library]) #panel #t-specs .spec:hover{background:#e6f3c515;border-color:#bada9e4f;}
+ #view-cat:not([data-console-library]) #panel .platform-model:hover:not([aria-pressed="true"]){background:#bcde981b;border-color:#bfe2a66e;transform:translateY(-1px);}
 }
-/* The right edge of the desktop view has little width at laptop sizes. */
-@media (min-width:621px) and (max-width:1040px){
- #view-cat:not([data-console-library]) #panel .jb-detail-hero{grid-template-columns:minmax(0,1fr) minmax(93px,25%);padding:16px;gap:12px;}
- #view-cat:not([data-console-library]) #panel .jb-detail-visual{min-height:115px;height:115px;}
- #view-cat:not([data-console-library]) #panel .jb-detail-hero #t-title{font-size:clamp(1.45rem,2.5vw,1.95rem)!important;}
- #view-cat:not([data-console-library]) #panel .jb-detail-hero #t-body{font-size:.79rem!important;}
- #view-cat:not([data-console-library]) #panel #t-meta .mcell{padding:12px 10px 12px 34px;}
- #view-cat:not([data-console-library]) #panel #t-meta .mcell::before{left:10px;top:15px;width:15px;height:15px;}
+@keyframes jb-story-enter{from{opacity:.74;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+#view-cat:not([data-console-library]) #panel.service-enter .jb-detail-hero{animation:jb-story-enter .37s cubic-bezier(.16,1,.3,1) both;}
+#view-cat:not([data-console-library]) #panel.service-enter .jb-detail-below{animation:jb-story-enter .38s .05s cubic-bezier(.16,1,.3,1) both;}
+/* The right reading pane can be narrower than the viewport on tablets. */
+@media(min-width:621px) and (max-width:930px){
+ #view-cat:not([data-console-library]) #panel .jb-detail-hero{
+  grid-template-columns:minmax(0,1fr) minmax(105px,26%);gap:12px;padding:17px;
+ }
+ #view-cat:not([data-console-library]) #panel .jb-detail-visual{min-height:114px;height:128px;max-height:128px;}
+ #view-cat:not([data-console-library]) #panel .jb-detail-hero #t-title{font-size:clamp(1.43rem,2.7vw,1.98rem)!important;}
+ #view-cat:not([data-console-library]) #panel .jb-detail-hero #t-body{font-size:.81rem!important;}
+ #view-cat:not([data-console-library]) #panel .jb-detail-below{grid-template-columns:1fr;gap:12px;}
+ #view-cat:not([data-console-library]) #panel .jb-detail-facts{order:-1;}
+ #view-cat:not([data-console-library]) #panel #t-meta{grid-template-columns:repeat(2,minmax(0,1fr));}
+ #view-cat:not([data-console-library]) #panel #t-meta .mcell{min-height:74px;}
 }
-/* Phone and landscape-phone: a warm editorial document, not a mini desktop screen. */
-@media (max-width:620px),(max-width:960px) and (max-height:500px){
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel{--jb-ink:#24412e;--jb-muted:#536e4b;padding:clamp(14px,4.3vw,22px)!important;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:'heading' 'body';row-gap:14px;margin:0 0 20px;padding:clamp(15px,4vw,21px);border:1px solid #bfd1b0;border-radius:16px;background:linear-gradient(156deg,#fffef9 0%,#f3f8ec 100%);box-shadow:inset 0 1px 0 #fff,0 3px 0 #d2dfc7,0 9px 22px #2649290b;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero::before{left:16px;right:16px;opacity:.9;background:linear-gradient(90deg,#6a9854,transparent 80%);}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero .tube-eyebrow{margin:0 0 13px!important;min-height:0;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #service-symbol{width:39px;height:39px;border:1px solid #aac89b;background:linear-gradient(140deg,#e5f1da,#d8e8c9);box-shadow:inset 0 1px 0 #fff,0 2px 0 #cfdec2;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #service-symbol>svg{color:#466b43;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #service-family{color:#57744b;font-size:.65rem;letter-spacing:.025em;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #t-title{max-width:100%;font:750 clamp(1.55rem,6.3vw,2.08rem)/1.11 var(--face-panel)!important;letter-spacing:-.046em!important;color:#203e2b;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #t-body{font:400 clamp(.86rem,3.5vw,.96rem)/1.68 var(--face-panel)!important;color:#526b50;max-width:65ch;}
+/* Phones: one quiet, tactile reading column; never a squashed desktop panel. */
+@media(max-width:620px),(max-width:960px) and (max-height:500px){
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel{
+  padding:clamp(12px,3.8vw,20px)!important;--detail-mist:#eef6e8;--detail-line:#bed3af;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero{
+  display:flex;flex-direction:column;gap:0;margin:0 0 15px;padding:clamp(17px,4.4vw,23px);
+  border:1px solid #b8ceaa;border-radius:18px;
+  background:linear-gradient(146deg,#fffefa,#f0f6e9);
+  box-shadow:inset 0 1px 0 #fff,0 3px 0 #cfdfc6,0 9px 22px #2649290b;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero::before{
+  left:20px;width:105px;background:linear-gradient(90deg,#659857,transparent);
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero::after{
+  width:190px;height:190px;right:-125px;bottom:-145px;border-color:#a0c59720;box-shadow:0 0 0 28px #b0d69a09;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-heading{display:flex;flex-direction:column;align-items:stretch;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero .tube-eyebrow{margin:0 0 12px!important;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #service-symbol{
+  width:32px;height:32px;flex-basis:32px;background:linear-gradient(145deg,#e8f4de,#d9eac9);
+  border-color:#b4cba5;box-shadow:inset 0 1px 0 #fff;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #service-symbol>svg{color:#426a45;stroke:#426a45;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #service-family{
+  color:#56734d;font-size:.64rem;letter-spacing:.055em;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #t-title{
+  max-width:100%;margin:0 0 12px!important;
+  font:750 clamp(1.64rem,6.55vw,2.22rem)/1.095 var(--face-panel)!important;
+  letter-spacing:-.052em!important;color:#23422d;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #t-body{
+  max-width:68ch;margin:0!important;color:#526b51;
+  font:400 clamp(.86rem,3.6vw,.97rem)/1.61 var(--face-panel)!important;
+ }
  #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="service"] .jb-detail-visual{display:none!important;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"]{grid-template-areas:'heading' 'art' 'body';row-gap:14px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"] .jb-detail-visual{display:grid;min-height:142px;height:clamp(142px,39vw,180px);max-height:180px;background:radial-gradient(ellipse at 50% 65%,#98b98426,transparent 70%),linear-gradient(150deg,#284633,#173122);border:1px solid #2b5637;border-radius:13px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"] .jb-detail-art .hardware-art{max-height:180px;width:100%;height:100%;transform:translateY(-3px) scale(.85);filter:drop-shadow(0 10px 8px #081b0f77) brightness(1.12);}
- 
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-section-bar{margin:2px 0 12px;gap:10px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-section-bar h3{color:#395839;font-size:.89rem;letter-spacing:-.01em;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-section-rule{background:linear-gradient(90deg,#97ba855b,transparent);}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 20px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell{min-height:89px;padding:13px 10px 11px 35px;border:1px solid #c3d6b5;background:#eaf3e3;border-radius:12px;box-shadow:inset 0 1px 0 #fff;gap:7px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell::before{top:15px;left:10px;width:15px;height:15px;filter:brightness(.48) saturate(1.6);}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell-l{font-size:.55rem;color:#5b7950;letter-spacing:.04em;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell-v{color:#2f4e35;font-size:.79rem;line-height:1.45;overflow-wrap:break-word;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-specs:not(.platform-grid){display:grid;grid-template-columns:1fr;gap:9px;margin:0 0 12px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-specs .spec{min-height:49px;border:1px solid #c8dbb9;border-radius:12px;padding:12px 13px;background:#fffefa;color:#345436;font-size:.82rem;line-height:1.45;box-shadow:inset 0 1px 0 #fff;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-specs .spec::before{background-color:#e7f2db;border-color:#b3cca3;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage{margin:0 0 20px;border-color:#b5cfa7;border-radius:14px;background:#edf5e8;box-shadow:inset 0 1px 0 #fff;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage summary{color:#2d5034;background:#e4f0dd;padding:13px 14px;min-height:56px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage summary>b{color:#3c6236;background:#f4faf0;border-color:#b4cda5;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage summary>svg{color:#4e7447;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model-hint{margin:13px 14px 12px;color:#516e4d;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-models{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:none;gap:7px;padding:0 13px 13px;overflow:visible;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model{min-height:44px;color:#345637;border-color:#bbd1ad;background:#fafdf7;font-size:.74rem;padding:10px 9px;border-radius:10px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model[aria-pressed="true"]{color:#fffef8;background:#315b38;border-color:#264d2c;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model-note{margin:0 14px 14px;color:#60795b;font-size:.72rem;line-height:1.55;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-selection{color:#416c3c;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .model-search{margin:0 13px 11px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .model-results{margin:0 13px 10px;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-compat{background:#fff8e8;border-color:#e2cea6;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-compat p{color:#716342;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero{animation:jb-detail-enter .45s cubic-bezier(.16,1,.3,1) backwards;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"] .jb-detail-visual{
+  display:grid;order:1;width:100%;height:clamp(132px,40vw,190px);min-height:132px;max-height:190px;
+  margin:16px 0 0;border-color:#315a3d;border-radius:13px;
+  background:radial-gradient(ellipse at center,#95b98929,transparent 70%),linear-gradient(155deg,#305340,#1a3526);
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"] .hardware-art{
+  width:100%;height:100%;max-height:175px;transform:scale(.89);filter:drop-shadow(0 8px 10px #03140a6e);
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-below{
+  display:flex;flex-direction:column;gap:12px;margin:0 0 12px;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes,
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-facts{
+  width:100%;height:auto;padding:14px;border:1px solid #c0d5b3;border-radius:15px;
+  background:linear-gradient(145deg,#fbfdf7,#eff6e8);
+  box-shadow:inset 0 1px 0 #fff,0 2px 0 #d5e2cc;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-facts{order:-1;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-section-bar,
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-facts-title{margin:0 0 12px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-section-bar h3,
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-facts-title h3{
+  color:#345b39;font-size:.83rem;font-weight:700;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-section-rule{
+  background:linear-gradient(90deg,#aac69b,transparent);
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell{
+  min-height:78px;padding:12px 10px 10px 36px;border:1px solid #cbddc2;border-radius:10px;
+  background:#f9fcf4;gap:6px;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell::before{
+  width:15px;height:15px;left:11px;top:13px;filter:brightness(.55) saturate(1.25);
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell-l{color:#63835a;font-size:.54rem;letter-spacing:.065em;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell-v{color:#305337;font-size:.78rem;line-height:1.41;overflow-wrap:break-word;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-specs:not(.platform-grid){gap:7px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-specs .spec{
+  min-height:44px;padding:10px;border:1px solid #cbddbf;border-radius:10px;background:#fbfef7;
+  color:#335739;font-size:.81rem;box-shadow:inset 0 1px 0 #fff;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-specs .spec::before{
+  background-color:#e8f2df;border-color:#b8d3a6;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage{
+  border-color:#b9d2aa;background:#f2f8ed;border-radius:14px;margin:0 0 15px;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage summary{
+  color:#31563a;background:#e9f2e1;padding:12px 13px;min-height:51px;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage summary>b{color:#43673c;background:#f8fcf4;border-color:#bad0ab;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-coverage summary>svg{color:#477344;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model-hint{color:#5d7856;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-models{
+  grid-template-columns:repeat(2,minmax(0,1fr));max-height:none;overflow:visible;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model{
+  min-height:44px;color:#315438;background:#fbfdf8;border-color:#c5d9b8;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model[aria-pressed="true"]{background:#315c3c;color:#f8fff2;border-color:#21492f;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-model-note{color:#607b56;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-selection{color:#406e3c;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-compat{background:#fff9e9;border-color:#e8d2a9;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #platform-compat p{color:#725e3e;}
 }
 @media(max-width:359px){
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero{padding:13px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero{padding:15px;}
  #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta{grid-template-columns:1fr;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell{min-height:62px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell{min-height:58px;}
  #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .platform-models{grid-template-columns:1fr;}
- #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="platform"] .jb-detail-visual{height:142px;}
 }
-@keyframes jb-detail-enter{from{opacity:.7;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){
- #view-cat:not([data-console-library]) #panel .jb-detail-hero,#view-cat:not([data-console-library]) #panel .jb-detail-art .hardware-art,#view-cat:not([data-console-library]) #panel .platform-model{animation:none!important;transition:none!important;transform:none!important;}
+@media(prefers-reduced-motion:reduce){
+ #view-cat:not([data-console-library]) #panel .jb-detail-hero,
+ #view-cat:not([data-console-library]) #panel .jb-detail-below,
+ #view-cat:not([data-console-library]) #panel .jb-detail-art>svg,
+ #view-cat:not([data-console-library]) #panel #t-specs .spec,
+ #view-cat:not([data-console-library]) #panel .platform-model{animation:none!important;transition:none!important;transform:none!important;}
 }
-@media(forced-colors:active){#view-cat:not([data-console-library]) #panel :is(.jb-detail-hero,.jb-detail-visual,.platform-model,.mcell){border:1px solid CanvasText!important;background:Canvas!important;color:CanvasText!important;box-shadow:none!important;}}
+@media(forced-colors:active){
+ #view-cat:not([data-console-library]) #panel :is(.jb-detail-hero,.jb-detail-visual,.jb-detail-includes,.jb-detail-facts,.platform-model,.mcell){
+  background:Canvas!important;border:1px solid CanvasText!important;box-shadow:none!important;color:CanvasText!important;
+ }
+}
+</style>
+
+<style id="adham-service-story-v4">
+/* The detail view is a compact editorial explanation, not a stack of empty boxes.
+   Every selector is restricted to the opened service panel. */
+#view-cat:not([data-console-library]) #panel{
+ --story-ink:#f5ffec;--story-soft:#d3e9c7;--story-border:rgba(198,226,176,.20);
+ --story-lime:#d9eeaf;--story-green:#214932;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero{
+ grid-template-columns:minmax(0,1fr) minmax(152px,27%);
+ gap:clamp(13px,2.3vw,23px);padding:clamp(14px,1.35vw,19px);
+ margin-bottom:12px;border-radius:19px;
+ background:radial-gradient(ellipse at 98% 2%,rgba(199,235,168,.13),transparent 54%),
+ linear-gradient(127deg,#274b36 0%,#193d2a 50%,#112c22 100%);
+ border-color:rgba(218,243,177,.25);
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero .tube-eyebrow{margin-bottom:8px!important;}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #t-title{
+ font-size:clamp(1.6rem,2.55vw,2.6rem)!important;
+ margin-bottom:8px!important;max-width:32ch;
+ letter-spacing:-.048em!important;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero #t-body{
+ color:#deead9;font-size:clamp(.82rem,1vw,.92rem)!important;line-height:1.55!important;
+}
+#view-cat:not([data-console-library]) #panel .jb-story-hook{
+ display:inline-flex;align-items:center;max-width:100%;gap:8px;
+ margin:0 0 10px;padding:5px 11px 5px 9px;
+ border-radius:7px;background:rgba(213,244,174,.10);
+ color:#e3f1ce;font:650 clamp(.71rem,.88vw,.82rem)/1.38 var(--face-panel);
+ border-left:2px solid #c6e99a;
+}
+#view-cat:not([data-console-library]) #panel .jb-story-hook[hidden]{display:none!important;}
+#view-cat:not([data-console-library]) #panel .jb-detail-visual{
+ height:142px;max-height:142px;min-height:128px;border-radius:14px;
+ background:radial-gradient(circle at 50% 48%,rgba(195,228,149,.22),transparent 60%),
+ repeating-linear-gradient(0deg,transparent 0 22px,rgba(204,233,169,.028) 22px 23px),
+ linear-gradient(140deg,#315c41,#15382a);
+ border-color:rgba(213,239,180,.20);
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-below{
+ display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+ grid-template-areas:"includes advice";
+ gap:9px 12px;margin:0 0 9px;align-items:stretch;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes{grid-area:includes;}
+#view-cat:not([data-console-library]) #panel .jb-detail-facts{grid-area:auto;}
+#view-cat:not([data-console-library]) #panel .jb-detail-advice{grid-area:advice;}
+#view-cat:not([data-console-library]) #panel .jb-detail-advice[hidden]{display:none!important;}
+#view-cat:not([data-console-library]) #panel .jb-detail-below:has(.jb-detail-advice[hidden]){
+ grid-template-areas:"includes";
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-below:has(.jb-detail-includes[hidden]){
+ grid-template-columns:1fr;grid-template-areas:"advice";
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes,
+#view-cat:not([data-console-library]) #panel .jb-detail-facts{
+ height:auto;padding:12px;border-radius:14px;
+ border:1px solid rgba(194,223,164,.22);
+ background:linear-gradient(145deg,rgba(200,232,171,.075),rgba(208,243,181,.018));
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes{
+ display:flex;flex-direction:column;justify-content:flex-start;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-section-bar h3,
+#view-cat:not([data-console-library]) #panel .jb-detail-facts-title h3{
+ color:#ebf7dc;font-weight:750;font-size:.81rem;
+}
+#view-cat:not([data-console-library]) #panel #t-specs:not(.platform-grid){
+ display:grid;grid-template-columns:1fr;gap:7px;
+}
+#view-cat:not([data-console-library]) #panel #t-specs .spec{
+ min-height:37px;padding:7px 10px;border-radius:9px;
+ background:rgba(209,238,178,.065);border:1px solid rgba(193,225,164,.22);
+ font-size:clamp(.73rem,.95vw,.79rem);
+}
+#view-cat:not([data-console-library]) #panel #t-specs .spec::before{flex-basis:22px;width:22px;height:22px;}
+#view-cat:not([data-console-library]) #panel .jb-detail-advice{
+ display:grid;grid-template-rows:1fr 1fr;gap:8px;min-width:0;
+}
+#view-cat:not([data-console-library]) #panel .jb-advice-card{
+ position:relative;min-width:0;padding:12px 14px;overflow:hidden;border-radius:13px;
+ transition:border-color .22s ease,transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease;
+}
+#view-cat:not([data-console-library]) #panel .jb-advice-fit{
+ background:linear-gradient(145deg,#e5f3d0,#cce5af);color:#24442e;
+ border:1px solid rgba(228,253,193,.85);box-shadow:inset 0 1px 0 #fff8;
+}
+#view-cat:not([data-console-library]) #panel .jb-advice-ready{
+ background:linear-gradient(138deg,#315c43,#274a3a);color:#e7f4df;
+ border:1px solid rgba(200,229,173,.24);
+}
+#view-cat:not([data-console-library]) #panel .jb-advice-head{display:flex;align-items:center;gap:9px;margin-bottom:6px;}
+#view-cat:not([data-console-library]) #panel .jb-advice-mark{
+ display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;border-radius:8px;
+ border:1px solid currentColor;opacity:.65;font:600 .64rem var(--face-data);
+}
+#view-cat:not([data-console-library]) #panel .jb-advice-head h3{
+ margin:0;font:750 .76rem/1.25 var(--face-panel);letter-spacing:.005em;color:inherit;
+}
+#view-cat:not([data-console-library]) #panel .jb-advice-card p{
+ margin:0 0 0 35px;color:inherit;font:440 clamp(.74rem,.95vw,.83rem)/1.45 var(--face-panel);
+ overflow-wrap:break-word;text-wrap:pretty;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-facts{
+ display:flex;align-items:center;gap:12px;padding:9px 12px;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-facts-title{
+ flex:0 0 98px;margin:0;white-space:nowrap;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-facts-title .jb-section-rule{display:none;}
+#view-cat:not([data-console-library]) #panel #t-meta{
+ flex:1;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;min-width:0;
+}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell{
+ min-height:48px;padding:7px 10px 7px 37px;border-radius:9px;
+ background:rgba(208,240,180,.045);gap:3px;
+}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell::before{top:14px;left:12px;width:15px;height:15px;}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell-l{font-size:.53rem;}
+#view-cat:not([data-console-library]) #panel #t-meta .mcell-v{font-size:.75rem;line-height:1.3;}
+#view-cat:not([data-console-library]) #panel .jb-detail-hero::after{opacity:.5;}
+/* Fold the practical particulars into the included-work card, avoiding a third row. */
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts{
+ display:block;height:auto;width:100%;margin:10px 0 0;padding:10px 0 0;
+ background:transparent;border:0;border-top:1px solid rgba(210,239,190,.16);
+ border-radius:0;box-shadow:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts .jb-detail-facts-title{
+ position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+ clip-path:inset(50%);white-space:nowrap;border:0;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts #t-meta{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;width:100%;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts #t-meta .mcell{
+ min-height:49px;padding:7px 8px 7px 31px;gap:2px;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts #t-meta .mcell::before{
+ width:13px;height:13px;left:9px;top:14px;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts #t-meta .mcell-v{
+ font-size:clamp(.65rem,.84vw,.75rem);overflow-wrap:break-word;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts{
+ margin-top:8px;padding-top:7px;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts>summary.jb-detail-facts-title{
+ display:flex;position:static;width:100%;height:auto;min-height:24px;padding:0;margin:0;
+ overflow:visible;clip-path:none;white-space:normal;border:0;background:none;box-shadow:none;
+ align-items:center;justify-content:space-between;cursor:pointer;color:#bed8b1;
+ font:650 .72rem/1.3 var(--face-panel);list-style:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts>summary::-webkit-details-marker{display:none;}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts>summary svg{
+ transition:transform .23s ease;flex:none;
+}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts[open]>summary svg{transform:rotate(180deg);}
+#view-cat:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts #t-meta{margin-top:9px;}
+@media(hover:hover) and (pointer:fine){
+ #view-cat:not([data-console-library]) #panel .jb-advice-card:hover{transform:translateY(-2px);box-shadow:0 8px 17px rgba(8,25,11,.18);}
+}
+/* Tablets and narrower workspace columns: remove competing columns instead of forcing tiny copy. */
+@media(min-width:621px) and (max-width:1000px){
+ #view-cat:not([data-console-library]) #panel .jb-detail-hero{grid-template-columns:minmax(0,1fr) 126px;}
+ #view-cat:not([data-console-library]) #panel .jb-detail-below{grid-template-columns:1fr;grid-template-areas:"includes" "advice";}
+ #view-cat:not([data-console-library]) #panel .jb-detail-advice{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;}
+ #view-cat:not([data-console-library]) #panel .jb-detail-below:has(.jb-detail-advice[hidden]){grid-template-areas:"includes";}
+}
+/* Mobile: a carefully paced reading column; no fake fixed heights or floating content. */
+@media(max-width:620px),(max-width:960px) and (max-height:500px){
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero{
+  display:flex;flex-direction:column;gap:0;padding:clamp(17px,4.3vw,23px);
+  border-radius:17px;background:linear-gradient(143deg,#f9fdf3,#edf6e6);
+  border:1px solid #b9d3aa;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #t-title{
+  color:#213d2b;max-width:100%;font-size:clamp(1.62rem,6.4vw,2.15rem)!important;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero #t-body{
+  color:#506a4f;font-size:clamp(.87rem,3.55vw,.99rem)!important;line-height:1.57!important;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-story-hook{
+  align-self:flex-start;margin-bottom:11px;padding:6px 9px;background:#e0f0d4;
+  color:#355a3c;border-left:3px solid #759b62;font-size:.77rem;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-below{
+  display:flex;flex-direction:column;gap:10px;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes,
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-facts{
+  order:initial;width:100%;padding:14px;border-radius:15px;background:linear-gradient(150deg,#fbfdf8,#edf5e8);border-color:#c0d5b4;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-advice{
+  display:grid;order:0;grid-template-columns:1fr;grid-template-rows:auto;gap:9px;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes{order:-1;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts{
+  display:block;order:0;margin:12px 0 0;padding:12px 0 0;background:transparent;border:0;
+  border-top:1px solid #cadbbd;box-shadow:none;border-radius:0;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts #t-meta{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes>.jb-detail-facts #t-meta .mcell{min-height:56px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-facts-title{margin-bottom:10px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-advice-card{padding:14px;border-radius:14px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-advice-fit{background:linear-gradient(135deg,#e1efca,#d2e7b8);border-color:#b8d399;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-advice-ready{background:linear-gradient(145deg,#315a41,#254c37);}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-advice-head h3{font-size:.83rem;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-advice-card p{font-size:.86rem;line-height:1.5;margin-left:35px;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-specs:not(.platform-grid){grid-template-columns:1fr;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta .mcell{min-height:66px;background:#f9fcf6;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-hero[data-kind="service"] .jb-detail-visual{display:none!important;}
+}
+@media(max-width:359px){
+ html{overflow-x:clip;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel #t-meta{grid-template-columns:1fr;}
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-advice-card p{margin-left:0;}
+}
+@media(max-width:620px),(max-width:960px) and (max-height:500px){
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts>summary.jb-detail-facts-title{
+  color:#375a3f;min-height:34px;padding:3px 2px;font-size:.79rem;
+ }
+ #view-cat[data-mobile-view="detail"]:not([data-console-library]) #panel .jb-detail-includes>details.jb-detail-facts #t-meta{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ #view-cat:not([data-console-library]) #panel .jb-advice-card{transition:none!important;animation:none!important;transform:none!important;}
+}
+@media(forced-colors:active){
+ #view-cat:not([data-console-library]) #panel .jb-advice-card{background:Canvas!important;color:CanvasText!important;border:1px solid CanvasText!important;}
+}
 </style>
 </head>
 <body>
@@ -5511,13 +5964,14 @@ dialog.card::backdrop {background:rgba(6,23,13,.58);backdrop-filter:blur(9px) sa
                     <span class="service-identity"><span id="service-symbol" aria-hidden="true"></span><span class="service-identity-copy"><span id="service-family"></span></span></span>
                   </div>
                   <h2 class="tube-title caret" id="t-title" tabindex="-1">&nbsp;</h2>
+                  <p class="jb-story-hook" id="jb-story-hook" hidden></p>
+                  <p class="tube-body" id="t-body"></p>
                 </div>
                 <div class="jb-detail-visual" id="jb-detail-visual" aria-hidden="true">
                   <div class="jb-visual-grid"></div>
                   <div class="jb-visual-rings"></div>
                   <div class="jb-detail-art" id="jb-detail-art"></div>
-                                </div>
-                <p class="tube-body" id="t-body"></p>
+                </div>
               </div>
               <div class="tube-rule" aria-hidden="true"></div>
               <div class="platform-compat" id="platform-compat" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></svg><p id="platform-compat-note"></p></div>
@@ -5530,15 +5984,32 @@ dialog.card::backdrop {background:rgba(6,23,13,.58);backdrop-filter:blur(9px) sa
                 <p class="platform-model-note" id="platform-model-note"></p>
               </details>
 
-              <div class="tube-meta" id="t-meta" hidden>
-                <span class="mcell"><i class="mcell-l" id="t-meta-l1">&nbsp;</i><b class="mcell-v" id="t-meta-v1">&nbsp;</b></span>
-                <span class="mcell"><i class="mcell-l" id="t-meta-l2">&nbsp;</i><b class="mcell-v" id="t-meta-v2">&nbsp;</b></span>
+              <div class="jb-detail-below" id="jb-detail-below">
+                <section class="jb-detail-includes" id="jb-detail-includes" aria-labelledby="jb-detail-section-title">
+                  <div class="jb-detail-section-bar" id="jb-detail-section-bar" hidden>
+                    <h3 id="jb-detail-section-title">What's included</h3>
+                    <span class="jb-section-rule" aria-hidden="true"></span>
+                  </div>
+                  <div class="tube-specs" id="t-specs"></div>
+                </section>
+                <details class="jb-detail-facts" id="jb-detail-facts">
+                  <summary class="jb-detail-facts-title"><span id="jb-detail-facts-title">How &amp; when</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m6 9 6 6 6-6"/></svg></summary>
+                  <div class="tube-meta" id="t-meta" hidden>
+                    <span class="mcell"><i class="mcell-l" id="t-meta-l1">&nbsp;</i><b class="mcell-v" id="t-meta-v1">&nbsp;</b></span>
+                    <span class="mcell"><i class="mcell-l" id="t-meta-l2">&nbsp;</i><b class="mcell-v" id="t-meta-v2">&nbsp;</b></span>
+                  </div>
+                </details>
+                <section class="jb-detail-advice" id="jb-detail-advice" aria-label="Is this service right for you?" hidden>
+                  <div class="jb-advice-card jb-advice-fit">
+                    <div class="jb-advice-head"><span class="jb-advice-mark" aria-hidden="true">01</span><h3 id="jb-advice-fit-title">Good fit for</h3></div>
+                    <p id="jb-advice-fit-copy"></p>
+                  </div>
+                  <div class="jb-advice-card jb-advice-ready">
+                    <div class="jb-advice-head"><span class="jb-advice-mark" aria-hidden="true">02</span><h3 id="jb-advice-ready-title">What to tell me</h3></div>
+                    <p id="jb-advice-ready-copy"></p>
+                  </div>
+                </section>
               </div>
-              <div class="jb-detail-section-bar" id="jb-detail-section-bar" hidden>
-                <h3 id="jb-detail-section-title">Service highlights</h3>
-                <span class="jb-section-rule" aria-hidden="true"></span>
-              </div>
-              <div class="tube-specs" id="t-specs"></div>
               <div class="tube-status"><div class="service-meter" aria-hidden="true"><i id="service-progress"></i></div>
                 <span id="t-seq">Ch —</span>
                 <b id="t-state" data-state="idle">Ready</b>
@@ -10835,10 +11306,34 @@ function consoleInit() {
 
 /* One responsive editorial treatment for service explanations and hardware profiles.
    The category's data and locally rendered SVG are reused; no extra requests or assets. */
+/* Each offering gets genuinely relevant questions and use cases. The copy describes
+   potential work, not an unconditional guarantee; existing quoted scope stays authoritative. */
+const JB_STORIES = {"CP-01":{"fit":["Pop-ups, unwanted software, suspicious browser behavior, or a computer that suddenly behaves differently.","Ventanas emergentes, programas no deseados, comportamientos extraños del navegador o cambios repentinos en el equipo."],"ready":["Tell me the device model, what you are seeing, when it began, and whether your files are backed up.","Indícame el modelo, los síntomas, cuándo comenzaron y si tienes una copia de tus archivos."]},"CP-02":{"fit":["Slow boot times, distracting background apps, limited free space, or a computer that no longer feels responsive.","Inicios lentos, aplicaciones innecesarias, poco espacio o un equipo que responde con dificultad."],"ready":["Share the computer model, Windows version if known, and which tasks feel slow.","Indícame el modelo, la versión de Windows si la conoces y qué tareas van lentas."]},"CP-03":{"fit":["Everyday office work, multi-monitor desks, demanding spreadsheets, design, and other work-focused setups.","Trabajo de oficina, varios monitores, hojas de cálculo exigentes, diseño y otras tareas profesionales."],"ready":["Describe the software you use, number of monitors, space available, and your budget range.","Describe tus programas, cantidad de monitores, espacio disponible y presupuesto aproximado."]},"CP-04":{"fit":["A new gaming PC matched to the actual games, resolution, performance goals, and upgrade plans you care about.","Una PC nueva adaptada a tus juegos, resolución, objetivos de rendimiento y futuras mejoras."],"ready":["List the games, target resolution, monitor refresh rate, and budget for parts.","Dime qué juegos usas, la resolución, la frecuencia del monitor y el presupuesto para componentes."]},"CP-05":{"fit":["A ready-to-use second-hand computer for home, school, or routine work without unnecessary extras.","Un equipo de segunda mano listo para casa, estudios o tareas habituales sin extras innecesarios."],"ready":["Tell me what you will use it for, the programs you need, and whether portability matters.","Dime para qué lo usarás, qué programas necesitas y si debe ser portátil."]},"CP-06":{"fit":["Choosing compatible memory, drives, processors, or graphics cards instead of guessing what will fit.","Elegir memoria, discos, procesadores o tarjetas gráficas compatibles sin comprar a ciegas."],"ready":["Send the full device or motherboard model and the part you want to replace or improve.","Envíame el modelo del equipo o placa base y qué componente quieres cambiar o mejorar."]},"CP-07":{"fit":["Crashes, boot failures, mysterious errors, peripheral trouble, or a problem without an obvious cause.","Fallos, problemas de arranque, mensajes de error, periféricos o averías sin causa evidente."],"ready":["Explain the symptoms, any error message, and the last thing that changed before the problem.","Describe los síntomas, mensajes de error y el último cambio antes del problema."]},"CP-08":{"fit":["Weak signal, dropouts, new routers, connected devices, or rooms with unreliable Wi-Fi.","Señal débil, cortes, routers nuevos, dispositivos conectados o habitaciones sin buena cobertura."],"ready":["Share your internet provider, router model, approximate floor plan, and where coverage fails.","Indícame tu proveedor, modelo del router, distribución aproximada y zonas sin señal."]},"CP-09":{"fit":["Getting comfortable with a new device, moving photos, setting up accounts, or learning everyday tasks.","Aprender a usar un dispositivo, trasladar fotos, configurar cuentas o practicar tareas cotidianas."],"ready":["Tell me the device type and the one or two tasks you most want help with.","Dime qué dispositivo tienes y cuáles son las tareas en las que más necesitas ayuda."]},"CP-10":{"fit":["Small teams needing consistent device setup, safer networks, shared access, or a clearer support routine.","Equipos pequeños que necesitan dispositivos uniformes, redes seguras, accesos y soporte organizado."],"ready":["Share team size, number of devices, key software, and the most frequent IT headaches.","Indícame el tamaño del equipo, cantidad de dispositivos, programas y problemas más frecuentes."]},"CP-11":{"fit":["An unused desktop or laptop you would like evaluated before deciding what to do with it.","Una computadora o portátil sin uso que quieres evaluar antes de decidir qué hacer."],"ready":["Send the make, model, approximate age, condition, and whether the device still powers on.","Envíame marca, modelo, antigüedad aproximada, estado y si todavía enciende."]},"CP-12":{"fit":["Repetitive admin work, document handling, recurring messages, or other workflows worth simplifying.","Tareas administrativas repetitivas, documentos, mensajes frecuentes o procesos que conviene simplificar."],"ready":["Describe one repeated task, the tools involved, and what a successful result would look like.","Describe una tarea repetida, las herramientas utilizadas y cómo sería el resultado deseado."]},"CP-13":{"fit":["People new to AI who want practical examples for writing, organizing, learning, or daily work.","Personas que empiezan con IA y buscan ejemplos de escritura, organización, aprendizaje o trabajo."],"ready":["Tell me your experience level and two real tasks you would like to practice.","Indícame tu experiencia y dos tareas reales que quieras practicar."]},"VG-M11":{"fit":["A PSP that needs storage, power, or a model-appropriate custom-software setup.","Una PSP que necesita almacenamiento, batería o software adaptado al modelo."],"ready":["Send the PSP model number and note any battery or memory-card issues.","Dime el modelo exacto de PSP y si tiene problemas de batería o tarjeta."]},"VG-M12":{"fit":["A PS Vita or PS TV where memory-card cost, available storage, or custom apps are the main concern.","Una PS Vita o PS TV con poco almacenamiento, tarjetas caras o necesidad de aplicaciones."],"ready":["Tell me whether it is a Vita 1000, 2000, or PS TV and its current system version.","Dime si es Vita 1000, 2000 o PS TV y su versión actual del sistema."]},"VG-M18":{"fit":["A classic PS2 needing storage, controller, cleaning, or revision-specific setup options.","Una PS2 clásica que necesita almacenamiento, mandos, limpieza u opciones según la revisión."],"ready":["Share the SCPH model number and whether the system is an original or Slim.","Envíame el número SCPH y aclara si es el modelo original o Slim."]},"VG-M01":{"fit":["A PS3 with heat, noise, storage, or compatible custom-software questions.","Una PS3 con calor, ruido, almacenamiento o dudas sobre software compatible."],"ready":["Send the PS3 model code, current firmware if known, and the symptoms or features wanted.","Envíame el código del modelo, firmware si lo conoces y los síntomas u objetivos."]},"VG-M02":{"fit":["A PS4 that runs loud, overheats, or needs a practical storage upgrade.","Una PS4 ruidosa, con calor excesivo o que necesita ampliar almacenamiento."],"ready":["Tell me whether it is original, Slim, or Pro and describe any noise or shutdowns.","Dime si es original, Slim o Pro y describe el ruido o los apagados."]},"VG-M03":{"fit":["A PS5 that needs more storage, routine dust care, or a different exterior finish.","Una PS5 que necesita más espacio, limpieza de polvo o un aspecto diferente."],"ready":["Tell me the PS5 edition and whether you want storage, cleaning, or cover options.","Indícame la edición de PS5 y si te interesa almacenamiento, limpieza o cubiertas."]},"VG-M08":{"fit":["An original Xbox with age-related hardware concerns, a tired drive, or dashboard questions.","Una Xbox original con problemas propios de su edad, disco antiguo o dudas sobre el menú."],"ready":["Share the console revision if known and whether it powers on reliably.","Indícame la revisión si la conoces y si enciende normalmente."]},"VG-M09":{"fit":["An Xbox 360 where cooling condition and hardware revision determine the safest approach.","Una Xbox 360 donde la refrigeración y la revisión determinan qué opciones convienen."],"ready":["Tell me whether it is an original, S, or E and its current operating condition.","Dime si es original, S o E y cómo funciona actualmente."]},"VG-M10":{"fit":["An Xbox One owner interested in supported Developer Mode emulation and controller organization.","Quien tenga Xbox One y busque emulación compatible con el modo desarrollador y mejor organización."],"ready":["Share the Xbox One model, storage setup, and which controllers or apps you plan to use.","Indícame el modelo, almacenamiento y qué mandos o aplicaciones piensas usar."]},"VG-M21":{"fit":["A Series S or X owner who wants a supported Developer Mode gaming and display setup.","Quien tenga Series S o X y quiera configurar juegos y pantalla en modo desarrollador."],"ready":["Tell me Series S or X, installed storage, display, and controller preferences.","Dime Series S o X, almacenamiento, pantalla y preferencias de mandos."]},"VG-M06":{"fit":["A 3DS or 2DS needing firmware options, themes, or repair of screens, hinges, or controls.","Una 3DS o 2DS con opciones de firmware, temas o fallos de pantalla, bisagras o controles."],"ready":["Send the exact 3DS/2DS model and note any broken parts or system-version concerns.","Envíame el modelo exacto y cualquier daño o duda sobre la versión del sistema."]},"VG-M19":{"fit":["A Game Boy that would benefit from a more visible screen or refreshed shell, controls, or power.","Una Game Boy que necesita mejor pantalla, carcasa, controles o alimentación."],"ready":["Tell me which Game Boy you own and which parts feel worn or hard to use.","Indícame el modelo de Game Boy y qué piezas están gastadas o son incómodas."]},"VG-M07":{"fit":["A DS family handheld with a cracked hinge, worn shell, or cartridge configuration questions.","Una DS con bisagra rota, carcasa desgastada o dudas sobre cartuchos."],"ready":["Tell me if it is DS, Lite, DSi, or DSi XL and what is broken or missing.","Dime si es DS, Lite, DSi o DSi XL y qué está roto o falta."]},"VG-M04":{"fit":["A Wii that needs model-compatible homebrew, controller, or USB-storage setup.","Una Wii que necesita homebrew compatible, mandos o almacenamiento USB."],"ready":["Share the Wii revision and whether it has previously been modified.","Indícame la revisión de Wii y si ya fue modificada."]},"VG-M05":{"fit":["A Wii U that needs careful storage preparation or compatible custom-software options.","Una Wii U que necesita preparar almacenamiento u opciones de software compatibles."],"ready":["Tell me the Wii U region, storage capacity, and current system state.","Dime la región, capacidad y estado actual de tu Wii U."]},"VG-M20":{"fit":["A Switch owner exploring controller, storage, setup, or hardware-specific compatibility.","Quien tenga Switch y busque opciones de mandos, almacenamiento o compatibilidad por hardware."],"ready":["Send the exact Switch model and system version; availability depends on both.","Envíame el modelo exacto y la versión del sistema; las opciones dependen de ambos."]},"VG-M16":{"fit":["An ROG Ally needing cooling attention, storage, or a more comfortable gaming setup.","Una ROG Ally que necesita refrigeración, almacenamiento o una mejor configuración de juegos."],"ready":["Tell me the exact Ally variant, storage capacity, and issue or upgrade goal.","Dime la variante exacta, capacidad y problema u objetivo."]},"VG-M22":{"fit":["A Legion Go where launchers, controls, storage, and operating-system choices need coordination.","Una Legion Go donde conviene coordinar lanzadores, mandos, almacenamiento y sistema operativo."],"ready":["Share the Go model, Windows or SteamOS, and the games or controllers you use.","Indícame el modelo, Windows o SteamOS, y los juegos o mandos que usas."]},"VG-M15":{"fit":["A Steam Deck with limited storage, worn controls, or a desired shell refresh.","Una Steam Deck con poco espacio, controles gastados o necesidad de renovar la carcasa."],"ready":["Tell me LCD or OLED, the storage size, and which upgrade matters most.","Dime si es LCD u OLED, capacidad y qué mejora te importa más."]},"VG-M23":{"fit":["An Anbernic device with confusing menus, firmware options, or unorganized game storage.","Una Anbernic con menús confusos, opciones de firmware o juegos desorganizados."],"ready":["Send the complete RG model name and its current operating system.","Envíame el nombre RG completo y su sistema operativo actual."]},"VG-M24":{"fit":["A Retroid handheld that needs a clear launcher, controls, or emulator setup for its capabilities.","Una Retroid que necesita un menú claro, controles y emuladores acordes con su potencia."],"ready":["Share the exact Pocket model and which systems or controls you want to use.","Dime el modelo Pocket exacto y qué sistemas o mandos quieres usar."]},"VG-M14":{"fit":["An Arcade1Up cabinet with upgrade plans for controls, the internal computer, or its marquee.","Una máquina Arcade1Up con planes de mejorar mandos, computadora interna o marquesina."],"ready":["Tell me the cabinet title, cabinet size, and which parts you want changed.","Dime el juego del gabinete, tamaño y qué piezas quieres cambiar."]},"VG-M13":{"fit":["An arcade cabinet with unreliable buttons, joystick problems, or aging internal wiring.","Una recreativa con botones que fallan, problemas de palanca o cableado antiguo."],"ready":["Send cabinet dimensions, control layout, and photos of the issue if possible.","Envíame dimensiones, distribución de controles y fotos del problema si es posible."]},"VG-M25":{"fit":["A phone that needs a more cohesive setup for compatible games, controllers, and storage.","Un móvil que necesita organizar juegos compatibles, mandos y almacenamiento."],"ready":["Share your phone model, Android/iOS version, and intended controller or games.","Dime el modelo, versión de Android/iOS y juegos o mando previsto."]},"VG-M27":{"fit":["A tablet used for gaming with controller, app, storage, or external-display questions.","Una tableta para jugar con dudas sobre mandos, aplicaciones, almacenamiento o pantalla externa."],"ready":["Tell me the tablet model, operating-system version, and screen or controller setup.","Indícame modelo, versión del sistema y cómo usas la pantalla y el mando."]},"VG-M17":{"fit":["A desktop where airflow, lighting, or case design could be more purposeful.","Una PC de escritorio que puede mejorar su ventilación, iluminación o diseño de caja."],"ready":["Send the case model, component list, and photos of the current interior if practical.","Envíame el modelo de caja, componentes y fotos del interior si puedes."]},"VG-M26":{"fit":["A laptop used for games where compatibility, controls, display, and thermals matter.","Un portátil para juegos donde importan compatibilidad, mandos, pantalla y temperatura."],"ready":["Share the laptop model, operating system, and the games or emulators you want configured.","Dime el modelo, sistema operativo y juegos o emuladores previstos."]},"VG-01":{"fit":["A handheld PC that feels too much like a desktop when you just want to play.","Una PC portátil que se siente demasiado como un escritorio cuando solo quieres jugar."],"ready":["Share the handheld model, operating system, and the apps you open most often.","Dime el modelo, sistema operativo y aplicaciones que usas más."]},"VG-02":{"fit":["A complete build from parts that needs compatibility checking and careful assembly.","Un montaje completo por piezas que necesita revisión de compatibilidad y ensamblaje cuidadoso."],"ready":["Send your component list or shopping cart before you buy everything.","Envíame la lista de componentes o el carrito antes de comprar."]},"VG-03":{"fit":["A gaming PC that freezes, crashes in games, overheats, or shuts down unexpectedly.","Una PC para jugar que se congela, falla, se calienta o se apaga inesperadamente."],"ready":["Tell me the hardware specifications, error messages, and when the failure happens.","Indícame los componentes, mensajes de error y cuándo ocurre el fallo."]},"VG-04":{"fit":["A PC or console that needs a simpler way to browse compatible retro games and use controllers.","Una PC o consola que necesita navegar mejor por juegos retro compatibles y usar mandos."],"ready":["Share the host device, controller type, and the systems you hope to run.","Dime el dispositivo, tipo de mando y sistemas que quieres utilizar."]},"MK-01":{"fit":["A business that needs a website people can understand, navigate, and use on a phone.","Un negocio que necesita una web clara, fácil de navegar y cómoda en móviles."],"ready":["Describe your business, target customers, essential pages, and one primary action visitors should take.","Describe tu negocio, público, páginas esenciales y la acción principal que buscas."]},"MK-02":{"fit":["A workflow that spreadsheets or generic software cannot manage comfortably anymore.","Un proceso que ya no se puede gestionar cómodamente con hojas de cálculo o software genérico."],"ready":["Walk me through your current workflow, who uses it, and where time is lost.","Explícame el proceso actual, quién lo usa y dónde se pierde tiempo."]},"MK-03":{"fit":["An app idea with a clear audience, core feature, and device requirements.","Una idea de aplicación con público, función principal y dispositivos definidos."],"ready":["Describe the main problem the app solves, expected users, and must-have features.","Describe el problema que resuelve, usuarios previstos y funciones imprescindibles."]},"MK-04":{"fit":["A site that needs better technical foundations or clearer relevance for local searches.","Una web que necesita mejorar su base técnica o relevancia en búsquedas locales."],"ready":["Send your website URL, service area, and the searches you would like to appear for.","Envíame la URL, zona de servicio y búsquedas para las que quieres aparecer."]},"MK-05":{"fit":["A brand needing consistent visuals, readable copy, or campaign-ready creative assets.","Una marca que necesita gráficos coherentes, textos claros o materiales de campaña."],"ready":["Share your brand, desired format, existing references, and where the content will appear.","Comparte tu marca, formato, referencias y dónde se publicará el contenido."]},"MK-06":{"fit":["A business that needs a dependable posting rhythm and a coherent voice across channels.","Un negocio que necesita publicaciones constantes y una voz coherente en redes."],"ready":["Tell me the platforms, target audience, current posting frequency, and goals.","Dime las plataformas, público, frecuencia actual y objetivos."]},"MK-07":{"fit":["A business with ideas but no clear order for channels, campaigns, and priorities.","Un negocio con ideas pero sin orden claro para canales, campañas y prioridades."],"ready":["Share your goals, available budget range, deadlines, and previous marketing efforts.","Indícame objetivos, presupuesto aproximado, plazos y campañas anteriores."]},"MK-08":{"fit":["A campaign where measurable leads or sales matter more than vanity metrics.","Una campaña donde importan contactos o ventas medibles más que las cifras superficiales."],"ready":["Tell me your offer, target audience, available ad spend, and desired conversion.","Dime tu oferta, público, inversión publicitaria prevista y conversión deseada."]},"OS-01":{"fit":["Smart devices that should work together instead of becoming five separate apps.","Dispositivos inteligentes que deberían funcionar juntos y no en cinco aplicaciones."],"ready":["Share the device brands, home Wi-Fi setup, and which routines you want automated.","Indícame marcas, red Wi-Fi y qué rutinas quieres automatizar."]},"OS-02":{"fit":["Missing files from a failed computer, accidentally deleted data, or a drive you cannot access.","Archivos perdidos por avería, eliminación accidental o un disco al que no puedes acceder."],"ready":["Stop using the affected drive if possible; tell me the device, failure, and what data matters.","Deja de usar el disco si es posible; dime el dispositivo, fallo y archivos importantes."]},"OS-03":{"fit":["A purchase where features, reliability, and compatibility are more important than hype.","Una compra donde importan utilidad, fiabilidad y compatibilidad más que la publicidad."],"ready":["Share your use case, budget range, preferred brands, and any equipment it must work with.","Dime uso previsto, presupuesto, marcas preferidas y equipos con los que debe funcionar."]},"OS-04":{"fit":["Accounts with weak passwords, missing two-step verification, or unreliable backups.","Cuentas con contraseñas débiles, sin verificación en dos pasos o copias inseguras."],"ready":["List the account and device types involved; never send passwords or recovery codes.","Indícame tipos de cuentas y dispositivos; nunca envíes contraseñas ni códigos de recuperación."]},"OS-05":{"fit":["Vintage electronics that deserve careful cleaning, assessment, and preservation.","Electrónica antigua que merece limpieza, evaluación y conservación cuidadosas."],"ready":["Send the model, known faults, and photos showing cosmetic condition or damage.","Envíame modelo, fallos conocidos y fotos de su estado o daños."]}};
+const JB_ART_PATHS = {"security":"<path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z\"/><path d=\"m9 12 2 2 4-4\"/>","speed":"<path d=\"M4.8 16a8 8 0 1 1 14.4 0\"/><path d=\"m12 13 4-5\"/><circle cx=\"12\" cy=\"13\" r=\"1\"/>","desktop":"<rect x=\"3\" y=\"4\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M8 21h8m-4-4v4\"/>","gamepad":"<path d=\"M7 8h10a5 5 0 0 1 4.9 4l.6 3.2A2.5 2.5 0 0 1 20 18c-.9 0-1.5-.4-2-.9l-1.1-1.1a2 2 0 0 0-1.4-.6H8.5a2 2 0 0 0-1.4.6L6 17.1a2.5 2.5 0 0 1-4.5-1.9l.6-3.2A5 5 0 0 1 7 8Z\"/><path d=\"M7 11v4m-2-2h4\"/><circle cx=\"16\" cy=\"12\" r=\"1\"/><circle cx=\"18\" cy=\"14\" r=\"1\"/>","hardware":"<rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/><path d=\"M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4\"/>","wrench":"<path d=\"M14.5 6.3a5.5 5.5 0 0 0-6.8 6.8L3 17.8 6.2 21l4.7-4.7a5.5 5.5 0 0 0 6.8-6.8l-3.6 3.6-3.2-3.2z\"/>","wifi":"<path d=\"M2 8a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0m-11 4a6 6 0 0 1 8 0\"/><circle cx=\"12\" cy=\"20\" r=\"1\"/>","learn":"<path d=\"m2 9 10-5 10 5-10 5-10-5Z\"/><path d=\"M6 11v5c0 3 12 3 12 0v-5m4-2v7\"/>","network":"<rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M12 8v5M5 16v-3h14v3\"/>","recycle":"<path d=\"m7 7 3-5 3 5M10 2l4 7m6 2 2 5h-6m6 0-5 4m-9 1H3l3-6m-3 6 7-1\"/>","spark":"<path d=\"m12 3 1.7 6.3L20 11l-6.3 1.7L12 19l-1.7-6.3L4 11l6.3-1.7L12 3ZM20 18l.6 2.4L23 21l-2.4.6L20 24l-.6-2.4L17 21l2.4-.6z\"/>","code":"<rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"3\"/><path d=\"m9 9-3 3 3 3m6-6 3 3-3 3\"/>","phone":"<rect x=\"6\" y=\"2\" width=\"12\" height=\"20\" rx=\"3\"/><path d=\"M10 18h4\"/>","search":"<circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 5 5\"/>","pen":"<path d=\"m3 21 5-.8L20 8a3 3 0 0 0-4-4L4 16l-1 5Z\"/><path d=\"m14 6 4 4\"/>","megaphone":"<path d=\"m3 9 14-5v16L3 15V9ZM17 7c4 1 4 9 0 10M6 16l2 6h4l-3-5\"/>","home":"<path d=\"M3 10 12 3l9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z\"/><path d=\"M9 21v-8h6v8\"/>","database":"<ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0\"/>","shopping":"<path d=\"M2 3h3l3 13h11l3-9H6M10 21h.01M18 21h.01\"/>","clock":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l4 2\"/>","camera":"<path d=\"M3 7h4l2-3h6l2 3h4v13H3V7Z\"/><circle cx=\"12\" cy=\"13\" r=\"4\"/>"};
+const JB_ART_FOR = {"CP-01":"security","CP-02":"speed","CP-03":"desktop","CP-04":"gamepad","CP-05":"desktop","CP-06":"hardware","CP-07":"wrench","CP-08":"wifi","CP-09":"learn","CP-10":"network","CP-11":"recycle","CP-12":"spark","CP-13":"learn","VG-01":"gamepad","VG-02":"hardware","VG-03":"wrench","VG-04":"gamepad","MK-01":"code","MK-02":"code","MK-03":"phone","MK-04":"search","MK-05":"pen","MK-06":"megaphone","MK-07":"spark","MK-08":"megaphone","OS-01":"home","OS-02":"database","OS-03":"shopping","OS-04":"security","OS-05":"wrench"};
+function jbStoryPaint(it){
+ const hook=$('#jb-story-hook'),panel=$('#jb-detail-advice');
+ const data=it && JB_STORIES[it.ref];
+ if(!hook||!panel)return;
+ const idx=langNow==='es'?1:0;
+ // The note already belongs to the existing catalogue and changes with EN/ES.
+ const tagline=it && !it.group && it.note || '';
+ hook.textContent=tagline;
+ hook.hidden=!tagline;
+ panel.hidden=!data||!!it?.group;
+ if(!data)return;
+ $('#jb-advice-fit-title').textContent=idx?'Ideal si necesitas':'Good fit for';
+ $('#jb-advice-ready-title').textContent=idx?'Qué contarme':'What to tell me';
+ $('#jb-advice-fit-copy').textContent=data.fit[idx];
+ $('#jb-advice-ready-copy').textContent=data.ready[idx];
+ panel.setAttribute('aria-label',idx?'Orientación para este servicio':'Planning this service');
+}
+
 function jbPresentDetail(it){
  const hero=$('#jb-detail-hero'), visual=$('#jb-detail-visual'), art=$('#jb-detail-art');
  const section=$('#jb-detail-section-bar'), label=$('#jb-detail-section-title');
- if(!hero||!visual||!art||!section||!label)return;
+ const below=$('#jb-detail-below'),includes=$('#jb-detail-includes'),facts=$('#jb-detail-facts'),factsTitle=$('#jb-detail-facts-title');
+ if(!hero||!visual||!art||!section||!label||!below||!includes||!facts||!factsTitle)return;
  const platform=!!(it && PLATFORM_FAMILY[it.ref]);
  const isFolder=!!it?.group;
  hero.dataset.kind=platform?'platform':'service';
@@ -10851,12 +11346,22 @@ function jbPresentDetail(it){
   art.replaceChildren();
   if(it){
    if(platform)art.innerHTML=hardwareArt(it.ref);
-   else art.appendChild(svgIcon(bankAt()?.icon||'<circle cx="12" cy="12" r="8"/>',''));
+   else art.appendChild(svgIcon(JB_ART_PATHS[JB_ART_FOR[it.ref]]||bankAt()?.icon||'<circle cx="12" cy="12" r="8"/>',''));
   }
  }
  visual.hidden=!it||isFolder;
- section.hidden=!it||isFolder||!it.specs?.length;
- label.textContent=platform?(langNow==='es'?'Opciones de servicio':'Service options'):(langNow==='es'?'Detalles del servicio':'Service highlights');
+ if(facts.parentElement!==includes)includes.appendChild(facts);
+ const hasItems=!!(it?.group ? it.items?.length : it?.specs?.length);
+ const hasFacts=!!(it && !isFolder && !D.tMeta.hidden);
+ includes.hidden=!hasItems;
+ facts.hidden=!hasFacts;
+ below.hidden=!hasItems&&!hasFacts;
+ section.hidden=!hasItems;
+ jbStoryPaint(it);
+ const es=langNow==='es';
+ label.textContent=isFolder?(es?'Servicios disponibles':'Available services'):
+   platform?(es?'Servicios y opciones':'Services & options'):(es?'Qué incluye':'What’s included');
+ factsTitle.textContent=es?'Cómo y cuándo':'How & when';
 }
 
 function paint() {
@@ -11905,6 +12410,8 @@ function openRequest(ref){
  const r=INDEX.find(x=>x.item.ref===ref);if(!r)return;
  Brief.record=r;Brief.timing=0;Brief.restore=true;
  conciergeLabels();
+ const story=JB_STORIES[ref];
+ if(story)$('#brief-message').placeholder=story.ready[langNow==='es'?1:0];
  const v=Brief.drafts.get(ref)||{name:'',device:'',message:'',timing:0};Brief.timing=v.timing;
  $('#brief-name').value=v.name;$('#brief-device').value=v.device||localizedModel(CL.models.get(ref))||'';$('#brief-message').value=v.message;
  $('#brief-message').removeAttribute('aria-invalid');$('#brief-error').textContent='';$('#brief-next').open=false;
